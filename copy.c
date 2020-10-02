@@ -8,29 +8,17 @@ extern int errno;
 void printFileStatsInformation (char* fileName)
 {
 	struct stat fileStat;
-    stat(fileName, &fileStat);
+	stat(fileName, &fileStat);
 	
 	printf("\n====================================\n");
 	printf("Information for %s\n",fileName);
-    printf("---------------------------\n");
-    printf("File Size: \t\t%d bytes\n",fileStat.st_size);
-    printf("Number of Links: \t%d\n",fileStat.st_nlink);
-    printf("File inode: \t\t%d\n",fileStat.st_ino);
-    printf("File Permissions: \t");
-    printf( (S_ISDIR(fileStat.st_mode)) ? "d\n" : "-\n");
-    
-    printf("dev  : %d\n",fileStat.st_dev);
-    printf("ino  : %d\n",fileStat.st_ino);
-    printf("mode : %d\n",fileStat.st_mode);
-    printf("nlink: %d\n",fileStat.st_nlink);
-    printf("uid  : %d\n",fileStat.st_uid);
-    printf("gid  : %d\n",fileStat.st_gid);
-    printf("rdev : %d\n",fileStat.st_rdev);
-    printf("size : %d\n",fileStat.st_size);
-    printf("atime: %d\n",fileStat.st_atime);
-    printf("mtime: %d\n",fileStat.st_mtime);
-    printf("ctime: %d\n",fileStat.st_ctime);
-    printf("======================================\n\n");
+	printf("---------------------------\n");
+	printf("File Size: \t\t%d bytes\n",fileStat.st_size);
+	printf("Number of Links: \t%d\n",fileStat.st_nlink);
+	printf("File inode: \t\t%d\n",fileStat.st_ino);
+	printf("File Permissions: \t");
+	printf( (S_ISDIR(fileStat.st_mode)) ? "d\n" : "-\n");
+	printf("======================================\n\n");
 }
 
 int main () {
